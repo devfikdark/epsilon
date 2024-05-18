@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { DM_Mono } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 
-const font = Open_Sans({ subsets: ["latin"] });
+const font = DM_Mono({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 export const metadata: Metadata = {
   title: "Epsilon",

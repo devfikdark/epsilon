@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -8,70 +9,102 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Pencil, Trash2 } from "lucide-react";
 
-const invoices = [
+const users = [
   {
-    invoice: "INV001",
-    paymentStatus: "Paid",
-    totalAmount: "$250.00",
-    paymentMethod: "Credit Card",
+    name: "Alice Johnson",
+    email: "alice.johnson@example.com",
+    phone: "123-456-7890",
+    accountCreated: "2023-05-01",
   },
   {
-    invoice: "INV002",
-    paymentStatus: "Pending",
-    totalAmount: "$150.00",
-    paymentMethod: "PayPal",
+    name: "Bob Smith",
+    email: "bob.smith@example.com",
+    phone: "123-456-7891",
+    accountCreated: "2023-05-02",
   },
   {
-    invoice: "INV003",
-    paymentStatus: "Unpaid",
-    totalAmount: "$350.00",
-    paymentMethod: "Bank Transfer",
+    name: "Charlie Davis",
+    email: "charlie.davis@example.com",
+    phone: "123-456-7892",
+    accountCreated: "2023-05-03",
   },
   {
-    invoice: "INV004",
-    paymentStatus: "Paid",
-    totalAmount: "$450.00",
-    paymentMethod: "Credit Card",
+    name: "Diana Martinez",
+    email: "diana.martinez@example.com",
+    phone: "123-456-7893",
+    accountCreated: "2023-05-04",
   },
   {
-    invoice: "INV005",
-    paymentStatus: "Paid",
-    totalAmount: "$550.00",
-    paymentMethod: "PayPal",
+    name: "Evan Wilson",
+    email: "evan.wilson@example.com",
+    phone: "123-456-7894",
+    accountCreated: "2023-05-05",
   },
   {
-    invoice: "INV006",
-    paymentStatus: "Pending",
-    totalAmount: "$200.00",
-    paymentMethod: "Bank Transfer",
+    name: "Fiona Brown",
+    email: "fiona.brown@example.com",
+    phone: "123-456-7895",
+    accountCreated: "2023-05-06",
   },
   {
-    invoice: "INV007",
-    paymentStatus: "Unpaid",
-    totalAmount: "$300.00",
-    paymentMethod: "Credit Card",
+    name: "George Clark",
+    email: "george.clark@example.com",
+    phone: "123-456-7896",
+    accountCreated: "2023-05-07",
+  },
+  {
+    name: "Hannah Lewis",
+    email: "hannah.lewis@example.com",
+    phone: "123-456-7897",
+    accountCreated: "2023-05-08",
+  },
+  {
+    name: "Ian Walker",
+    email: "ian.walker@example.com",
+    phone: "123-456-7898",
+    accountCreated: "2023-05-09",
+  },
+  {
+    name: "Julia Hall",
+    email: "julia.hall@example.com",
+    phone: "123-456-7899",
+    accountCreated: "2023-05-10",
   },
 ];
+
+console.log(users);
 
 export function UserList() {
   return (
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[100px]">Invoice</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
+          <TableHead>Name</TableHead>
+          <TableHead>Email</TableHead>
+          <TableHead>Phone Number</TableHead>
+          <TableHead>Account Created</TableHead>
+          <TableHead className="text-right">Action</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {invoices.map((invoice) => (
-          <TableRow key={invoice.invoice}>
-            <TableCell className="font-medium">{invoice.invoice}</TableCell>
-            <TableCell>{invoice.paymentStatus}</TableCell>
-            <TableCell>{invoice.paymentMethod}</TableCell>
-            <TableCell className="text-right">{invoice.totalAmount}</TableCell>
+        {users.map((user, index) => (
+          <TableRow key={index}>
+            <TableCell className="font-medium">{user.name}</TableCell>
+            <TableCell>{user.email}</TableCell>
+            <TableCell>{user.phone}</TableCell>
+            <TableCell>{user.accountCreated}</TableCell>
+            <TableCell className="text-right">
+              <div className="flex gap-1">
+                <Button size="icon" variant="outline">
+                  <Pencil className="size-4" />
+                </Button>
+                <Button size="icon" variant="outline">
+                  <Trash2 className="size-4" />
+                </Button>
+              </div>
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
