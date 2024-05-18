@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Reddit_Mono } from "next/font/google";
-
-import AppProvider from "@/providers";
+import { Open_Sans } from "next/font/google";
 
 import "./globals.css";
+import { ThemeProvider } from "@/providers/theme-provider";
 
-const font = Reddit_Mono({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
+const font = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Epsilon",
@@ -18,9 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={font.className}>
-        <AppProvider>{children}</AppProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
