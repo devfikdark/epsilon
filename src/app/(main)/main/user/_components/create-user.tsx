@@ -17,8 +17,8 @@ const CreateUser = () => {
   return (
     <>
       <div className="f-end my-4">
-        <Button className="gap-1.5" onClick={() => setUserModal({ isOpen: true, isEdit: false, data: null })}>
-          <PlusCircle className="size-4" /> New User
+        <Button className="gap-1.5 h-8" onClick={() => setUserModal({ isOpen: true, isEdit: false, data: null })}>
+          <PlusCircle className="size-3.5" /> New User
         </Button>
       </div>
       <UserList />
