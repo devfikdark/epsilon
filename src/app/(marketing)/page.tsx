@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Home = () => {
   return (
-    <div className="container max-w-5xl text-center mx-auto p-4">
+    <div className="container max-w-5xl text-center mx-auto p-4 flex justify-center items-center h-full w-full">
       <div className="flex flex-col gap-8">
         <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-center font-semibold tracking-wider">
           Data scraping made easy
