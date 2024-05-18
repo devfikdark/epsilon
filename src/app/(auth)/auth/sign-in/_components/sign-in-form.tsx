@@ -2,6 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useRouter } from "next/navigation";
 
 import FormProvider from "@/components/rhf-form/FormProvider";
 import RHFInputField from "@/components/rhf-form/RHFInputField";
@@ -10,6 +11,7 @@ import { SignInSchema } from "@/lib/schema-validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const SignInForm = () => {
+  const router = useRouter();
   type TSignInSchema = z.infer<typeof SignInSchema>;
 
   const methods = useForm<TSignInSchema>({
@@ -24,6 +26,7 @@ const SignInForm = () => {
 
   const onSubmit = (data: TSignInSchema) => {
     console.log("form submitted", data);
+    router.push("/main/user");
   };
 
   return (

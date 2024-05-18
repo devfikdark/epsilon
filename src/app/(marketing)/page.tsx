@@ -13,11 +13,9 @@ const Home = () => {
           Power your go-to-market with one platform. Fueled by the most accurate data on 275M contacts and 73M
           companies.
         </span>
-        <div>
-          <Button asChild size="lg">
-            <Link href="/auth/sign-in">Get Started</Link>
-          </Button>
-        </div>
+        <Link href="/auth/sign-in">
+          <Button size="lg">Get Started</Button>
+        </Link>
       </div>
     </div>
   );
