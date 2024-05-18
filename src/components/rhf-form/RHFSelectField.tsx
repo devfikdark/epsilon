@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
-import { useFormContext } from 'react-hook-form';
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form';
-import { Select, SelectContent, SelectGroup, SelectTrigger, SelectValue } from '../ui/select';
-import { ScrollArea } from '../ui/scroll-area';
+import { ReactNode } from "react";
+import { useFormContext } from "react-hook-form";
+
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
+import { Select, SelectContent, SelectGroup, SelectTrigger, SelectValue } from "../ui/select";
 
 type RHFInputFieldProps = {
   name: string;
@@ -10,9 +10,10 @@ type RHFInputFieldProps = {
   placeholder?: string;
   children: ReactNode;
   required?: boolean;
+  optional?: boolean;
 };
 
-const RHFSelectField = ({ name, label, placeholder, children, required }: RHFInputFieldProps) => {
+const RHFSelectField = ({ name, label, placeholder, children, required, optional }: RHFInputFieldProps) => {
   const { control } = useFormContext();
 
   return (
@@ -23,11 +24,12 @@ const RHFSelectField = ({ name, label, placeholder, children, required }: RHFInp
         <FormItem>
           <FormLabel>
             {label}
-            {required && <span className='text-red-500'>*</span>}
+            {required && <span className="text-red-500">*</span>}
+            {optional && <span className="text-gray-500">&nbsp;(optional)</span>}
           </FormLabel>
           <FormControl>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
-              <SelectTrigger className='w-full'>
+              <SelectTrigger className="w-full">
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
               <SelectContent>
