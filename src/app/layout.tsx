@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Reddit_Mono } from "next/font/google";
 
 import AppProvider from "@/providers";
 
 import "./globals.css";
 
-const font = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
+const font = Reddit_Mono({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
 
 export const metadata: Metadata = {
   title: "Epsilon",

@@ -28,8 +28,10 @@ const SignInForm = () => {
 
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-      <RHFInputField name="email" label="Email" />
-      <RHFInputField name="password" label="Password" type="password" />
+      <div className="space-y-4">
+        <RHFInputField name="email" label="Email" />
+        <RHFInputField name="password" label="Password" type="password" />
+      </div>
 
       <Button className="w-full mt-8" type="submit">
         Sign In

@@ -1,12 +1,28 @@
+"use client";
+
 import { CircleUserRound } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const SidebarAccount = () => {
   return (
-    <Button title="Account" variant="ghost" size="icon" className="mt-auto rounded-lg" aria-label="Account">
-      <CircleUserRound className="size-5" />
-    </Button>
+    <>
+      <DropdownMenu>
+        <DropdownMenuTrigger>
+          <div title="Account" className="mt-auto rounded-lg p-2" aria-label="Account" role="button">
+            <CircleUserRound className="size-5" />
+          </div>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end">
+          <DropdownMenuItem>Logout</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </>
   );
 };
 
