@@ -9,7 +9,7 @@ const SearchInput = ({ onChange }: SearchInputProps) => {
     <Input
       type="search"
       placeholder="Search products..."
-      className="w-full appearance-none bg-background shadow-none"
+      className="w-full appearance-none bg-background shadow-none lg:w-80"
       onChange={onChange}
     />
   );
