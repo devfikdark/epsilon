@@ -90,7 +90,7 @@ const UserSection = () => {
   return (
     <>
       <div className="flex justify-between items-center flex-wrap my-4">
-        <SearchInput onChange={handleSearch} />
+        <SearchInput onChange={handleSearch} placeholder="Search user" />
         <Button className="gap-1.5" onClick={() => setUserModal({ isOpen: true, isEdit: false, data: null })}>
           <PlusCircle className="size-3.5" /> New User
         </Button>
