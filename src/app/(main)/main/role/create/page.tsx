@@ -1,3 +1,4 @@
+import HeaderTitle from "@/components/header-title";
 import { Metadata } from "next";
 import RoleCreateSection from "../_components/role-create-section";
 
@@ -6,7 +7,12 @@ export const metadata: Metadata = {
 };
 
 const CreateRole = () => {
-  return <RoleCreateSection />;
+  return (
+    <div className="container max-w-4xl mx-auto">
+      <HeaderTitle>Create New Role</HeaderTitle>
+      <RoleCreateSection />
+    </div>
+  );
 };
 
 export default CreateRole;

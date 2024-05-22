@@ -34,3 +34,7 @@ export const UserSchema = z
     message: "Passwords don't match",
     path: ["confirm_password"],
   });
+
+export const RoleSchema = z.object({
+  name: z.string().min(3),
+});
