@@ -1,11 +1,9 @@
 import AppProvider from "@/providers";
 import type { Metadata } from "next";
-import { DM_Mono } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
+import { GeistMono } from "geist/font/mono";
 
 import "./globals.css";
-
-const font = DM_Mono({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 export const metadata: Metadata = {
   title: {
@@ -22,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={font.className}>
+      <body className={GeistMono.className}>
         <AppProvider>
-          <NextTopLoader color="#C4CCCC" height={3} easing="ease" />
+          <NextTopLoader color="#000" height={3} easing="ease" />
           {children}
         </AppProvider>
       </body>

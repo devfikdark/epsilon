@@ -37,4 +37,8 @@ export const UserSchema = z
 
 export const RoleSchema = z.object({
   name: z.string().min(3),
+  description: z.string().optional(),
+  items: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: "You have to select at least one item.",
+  }),
 });
