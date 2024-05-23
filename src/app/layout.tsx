@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={GeistMono.className}>
         <AppProvider>
-          <NextTopLoader color="#000" height={3} easing="ease" />
+          <NextTopLoader color="#2563eb" height={3} easing="ease" />
           {children}
         </AppProvider>
       </body>
